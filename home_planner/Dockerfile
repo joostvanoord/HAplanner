@@ -6,9 +6,9 @@ RUN apk add --no-cache nodejs npm
 
 # Copy app
 WORKDIR /app
-COPY home-planner/package.json ./
-COPY home-planner/src/ ./src/
-COPY home-planner/public/ ./public/
+COPY package.json ./
+COPY src/ ./src/
+COPY public/ ./public/
 
 # Copy run script
 COPY run.sh /run.sh
