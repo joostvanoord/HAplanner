@@ -15,6 +15,7 @@ export GOOGLE_REDIRECT_URI=$(bashio::config 'GOOGLE_REDIRECT_URI')
 export GOOGLE_CALENDAR_ME_ID=$(bashio::config 'GOOGLE_CALENDAR_ME_ID')
 export GOOGLE_CALENDAR_PARTNER_ID=$(bashio::config 'GOOGLE_CALENDAR_PARTNER_ID')
 export GOOGLE_CALENDAR_SHARED_ID=$(bashio::config 'GOOGLE_CALENDAR_SHARED_ID')
+bashio::log.info "Football API key: $(bashio::config 'FOOTBALL_DATA_API_KEY' | cut -c1-4)..."
 
 # Home Assistant internal API — automatisch beschikbaar binnen addons
 export HOME_ASSISTANT_URL="http://supervisor/core"
