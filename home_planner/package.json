@@ -1,0 +1,13 @@
+{
+  "name": "planner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Laptop-first planner app with a local web UI and future Google Calendar / Home Assistant integrations.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Planner Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./planner.css">
+</head>
+<body>
+  <main class="app-shell">
+
+    <!-- LEFT: datum + agenda's -->
+    <section class="column column-left">
+      <header class="topbar">
+        <div class="date-block">
+          <p class="date-line">6 juni '26</p>
+          <span class="date-divider" aria-hidden="true"></span>
+          <p class="time-line" id="clock">17:40</p>
+        </div>
+        <div class="integration-strip">
+          <div class="integration-status" id="google-status">Google Calendar nog niet gekoppeld</div>
+          <button class="integration-button" id="google-connect-button" type="button">Google koppelen</button>
+        </div>
+      </header>
+
+      <article class="card agenda-card clickable" data-card="agenda-joost">
+        <div class="card-header">
+          <h2 id="agenda-joost-title">Agenda Joost</h2>
+        </div>
+        <div class="agenda-list" id="agenda-joost-list">
+          <div class="agenda-item">
+            <span class="agenda-time">12:00</span>
+            <span class="agenda-title">Tandarts</span>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">14:00</span>
+            <span class="agenda-title">Lunch Teerd</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card agenda-card clickable" data-card="agenda-partner">
+        <div class="card-header">
+          <h2 id="agenda-partner-title">Agenda Nadine</h2>
+        </div>
+        <div class="agenda-list" id="agenda-partner-list">
+          <div class="agenda-item">
+            <span class="agenda-time">11:30</span>
+            <span class="agenda-title">Pilates</span>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">16:15</span>
+            <span class="agenda-title">Belafspraak</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card agenda-card clickable" data-card="agenda-shared">
+        <div class="card-header">
+          <h2 id="agenda-shared-title">Agenda samen</h2>
+        </div>
+        <div class="agenda-list" id="agenda-shared-list">
+          <div class="agenda-item">
+            <span class="agenda-time">11:30</span>
+            <span class="agenda-title">Gezamenlijk overzicht verschijnt hier</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- CENTER: smart home -->
+    <section class="column column-center">
+      <div class="section-title-wrap">
+        <h1 class="section-title">Smart Home</h1>
+      </div>
+
+      <article class="card smart-home-card">
+        <div class="card-header">
+          <h2>Verlichting</h2>
+          <div class="header-actions">
+            <button class="header-pill-button" id="home-group-button" type="button">Group</button>
+            <button class="header-icon-button" id="home-settings-button" type="button" aria-label="Kies apparaten">
+              <span aria-hidden="true">⚙</span>
+            </button>
+          </div>
+        </div>
+        <div class="room-blocks">
+
+          <div class="room-block">
+            <p class="room-label">Living Room</p>
+            <div class="light-row">
+              <button class="power-button is-on" aria-label="Standing lamp toggelen"></button>
+              <button class="name-button clickable" data-card="lamp-standing">Standing lamp</button>
+            </div>
+            <div class="light-row dimmable-row" data-brightness="58">
+              <button class="power-button is-on" aria-label="Mood lights toggelen"></button>
+              <button class="dimmer-pill" aria-label="Mood lights dimmer">
+                <span class="dimmer-fill"></span>
+                <span class="dimmer-label">
+                  <span>Mood lights</span>
+                  <span class="dimmer-pct">58%</span>
+                </span>
+              </button>
+            </div>
+            <div class="light-row">
+              <button class="power-button" aria-label="Lampie toggelen"></button>
+              <button class="name-button clickable" data-card="lamp-lampie">Lampie</button>
+            </div>
+            <div class="light-row dimmable-row" data-brightness="71">
+              <button class="power-button is-on" aria-label="Table lights toggelen"></button>
+              <button class="dimmer-pill" aria-label="Table lights dimmer">
+                <span class="dimmer-fill"></span>
+                <span class="dimmer-label">
+                  <span>Table lights</span>
+                  <span class="dimmer-pct">71%</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="room-block">
+            <p class="room-label">Kitchen</p>
+            <div class="light-row dimmable-row" data-brightness="46">
+              <button class="power-button is-on" aria-label="Kitchen lights toggelen"></button>
+              <button class="dimmer-pill" aria-label="Kitchen lights dimmer">
+                <span class="dimmer-fill"></span>
+                <span class="dimmer-label">
+                  <span>Kitchen lights</span>
+                  <span class="dimmer-pct">46%</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="room-block">
+            <p class="room-label">Bedroom</p>
+            <div class="light-row dimmable-row" data-brightness="34">
+              <button class="power-button" aria-label="Bedroom lights toggelen"></button>
+              <button class="dimmer-pill" aria-label="Bedroom lights dimmer">
+                <span class="dimmer-fill"></span>
+                <span class="dimmer-label">
+                  <span>Bedroom lights</span>
+                  <span class="dimmer-pct">34%</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+    <!-- RIGHT: sports + widget -->
+    <section class="column column-right">
+      <div class="section-title-wrap">
+        <h1 class="section-title">Sports</h1>
+      </div>
+
+      <article class="card sports-card">
+        <div class="card-header">
+          <h2>Sportagenda</h2>
+          <div class="sports-tabs" role="tablist" aria-label="Sportweergave">
+            <button class="sports-tab is-active" id="sports-tab-today" type="button" data-sports-view="today" role="tab" aria-selected="true">Vandaag</button>
+            <button class="sports-tab" id="sports-tab-upcoming" type="button" data-sports-view="upcoming" role="tab" aria-selected="false">Aankomend</button>
+          </div>
+        </div>
+        <p class="sports-summary" id="sports-summary">Alleen de interessantste wedstrijden van vandaag.</p>
+        <div class="sports-list" id="sports-list">
+          <div class="sports-item">
+            <span class="sports-time">19:30</span>
+            <div class="sports-main">
+              <div class="sports-badges">
+                <span class="team-badge logo-badge"><img src="https://upload.wikimedia.org/wikipedia/en/0/05/PSV_Eindhoven.svg" alt="PSV" class="club-logo"></span>
+                <span class="versus-pill">vs</span>
+                <span class="team-badge logo-badge"><img src="https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg" alt="Ajax" class="club-logo"></span>
+              </div>
+              <div class="sports-copy">
+                <p class="sports-match">PSV vs Ajax</p>
+                <p class="sports-meta">Eredivisie</p>
+              </div>
+            </div>
+          </div>
+          <div class="sports-item">
+            <span class="sports-time">20:15</span>
+            <div class="sports-main">
+              <div class="sports-badges">
+                <span class="player-badge sinner">J</span>
+                <span class="versus-pill">vs</span>
+                <span class="player-badge alcaraz">C</span>
+              </div>
+              <div class="sports-copy">
+                <p class="sports-match">Sinner vs Alcaraz</p>
+                <p class="sports-meta">Roland Garros</p>
+              </div>
+            </div>
+          </div>
+          <div class="sports-item">
+            <span class="sports-time">21:00</span>
+            <div class="sports-main">
+              <div class="sports-badges">
+                <span class="team-badge nl">NL</span>
+              </div>
+              <div class="sports-copy">
+                <p class="sports-match">NL relay final</p>
+                <p class="sports-meta">Olympics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card widget-card">
+        <div class="widget-pages">
+
+          <section class="widget-page is-active" data-widget="weather">
+            <p class="weather-kicker">Weer vandaag</p>
+            <div class="weather-hero">
+              <div class="weather-primary">
+                <p class="weather-label">Huidig</p>
+                <div class="weather-temp-line">
+                  <span class="weather-temp" id="weather-temp">19°</span>
+                  <span class="weather-icon" aria-hidden="true">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="22" cy="19" r="10" fill="url(#sg)" opacity="0.95"/>
+                      <defs>
+                        <radialGradient id="sg" cx="40%" cy="30%" r="70%">
+                          <stop offset="0%" stop-color="#fce376"/>
+                          <stop offset="100%" stop-color="#f0a030"/>
+                        </radialGradient>
+                      </defs>
+                      <line x1="22" y1="4" x2="22" y2="1" stroke="#f5bc3a" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="32.5" y1="7" x2="34.5" y2="4.8" stroke="#f5bc3a" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="38" y1="17" x2="41" y2="16" stroke="#f5bc3a" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="11.5" y1="7" x2="9.5" y2="4.8" stroke="#f5bc3a" stroke-width="2.5" stroke-linecap="round"/>
+                      <line x1="6" y1="17" x2="3" y2="16" stroke="#f5bc3a" stroke-width="2.5" stroke-linecap="round"/>
+                      <rect x="16" y="32" width="30" height="14" rx="7" fill="#dde8f0"/>
+                      <circle cx="23" cy="32" r="8" fill="#e4edf5"/>
+                      <circle cx="33" cy="30" r="10" fill="#eaf1f7"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="weather-secondary">
+                <p class="weather-label">Verwacht</p>
+                <p class="weather-expected-temp" id="weather-expected-temp">21°</p>
+                <p class="weather-expected-note" id="weather-expected-note">Meest waarschijnlijk later vandaag</p>
+              </div>
+            </div>
+            <p class="weather-summary" id="weather-summary">Licht bewolkt, later kans op regen</p>
+            <div class="weather-stats" id="weather-stats">
+              <span class="weather-stat-pill">Max 21°</span>
+              <span class="weather-stat-pill">Wind 3 Bft</span>
+              <span class="weather-stat-pill">Regen 45%</span>
+            </div>
+            <div class="rain-chart" aria-label="Regenverwachting">
+              <div class="rain-grid"></div>
+              <svg class="rain-svg" id="rain-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <line class="rain-baseline" x1="0" y1="88" x2="100" y2="88"></line>
+                <path class="rain-area" id="rain-area"></path>
+                <path class="rain-line" id="rain-line"></path>
+              </svg>
+              <div class="rain-time-labels" id="rain-time-labels">
+                <span>Nu</span>
+                <span>+3u</span>
+                <span>+6u</span>
+                <span>+9u</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="widget-page" data-widget="news">
+            <div class="widget-header">
+              <div>
+                <h2>Nieuws</h2>
+                <p id="news-feed-label">NOS Nieuws</p>
+              </div>
+            </div>
+            <div class="news-list" id="news-list">
+              <article class="news-item"><div class="news-copy"><p class="news-title">Nieuws wordt geladen…</p></div></article>
+            </div>
+          </section>
+
+          <section class="widget-page" data-widget="football-news">
+            <div class="widget-header">
+              <div>
+                <h2>Voetbalnieuws</h2>
+                <p id="football-feed-label">VoetbalPrimeur</p>
+              </div>
+            </div>
+            <div class="news-list" id="football-news-list">
+              <article class="news-item"><div class="news-copy"><p class="news-title">Voetbalnieuws wordt geladen…</p></div></article>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="widget-dots" aria-label="Widget pagina's">
+          <button class="dot is-active" data-target="weather" aria-label="Toon weer"></button>
+          <button class="dot" data-target="news" aria-label="Toon nieuws"></button>
+          <button class="dot" data-target="football-news" aria-label="Toon voetbalnieuws"></button>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <div class="modal-backdrop is-hidden" id="home-settings-modal">
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="home-settings-title">
+      <div class="settings-modal-header">
+        <h2 id="home-settings-title">Apparaten kiezen</h2>
+        <button class="header-icon-button" id="home-settings-close" type="button" aria-label="Sluiten">×</button>
+      </div>
+      <p class="settings-modal-copy">Vink de apparaten aan die je in het overzicht wilt zien.</p>
+      <div class="settings-device-list" id="settings-device-list"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop is-hidden" id="home-group-modal">
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="home-group-title">
+      <div class="settings-modal-header">
+        <h2 id="home-group-title">Groep maken</h2>
+        <button class="header-icon-button" id="home-group-close" type="button" aria-label="Sluiten">×</button>
+      </div>
+      <p class="settings-modal-copy">Kies apparaten uit het overzicht en geef de groep een naam.</p>
+      <div class="settings-device-list" id="group-device-list"></div>
+      <div class="group-form">
+        <label class="group-form-label" for="group-name-input">Group name</label>
+        <input class="group-name-input" id="group-name-input" type="text" placeholder="Bijvoorbeeld Mood lights">
+        <div class="group-form-actions">
+          <button class="header-pill-button is-muted" id="home-group-cancel" type="button">Cancel</button>
+          <button class="header-pill-button" id="home-group-save" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop is-hidden article-modal-backdrop" id="article-modal">
+    <div class="article-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title">
+      <div class="settings-modal-header article-modal-header" id="article-modal-header">
+        <div>
+          <h2 id="article-modal-title">Artikel</h2>
+          <p class="article-modal-source" id="article-modal-source">Nieuwsbron</p>
+        </div>
+        <button class="header-icon-button" id="article-modal-close" type="button" aria-label="Sluiten">×</button>
+      </div>
+      <div class="article-frame-wrap" id="article-frame-wrap">
+        <iframe class="article-frame" id="article-frame" title="Nieuwsartikel"></iframe>
+      </div>
+      <div class="nos-article-view is-hidden" id="nos-article-view">
+        <div class="nos-article-topbar">
+          <div class="nos-wordmark" aria-label="NOS">
+            <span>N</span><span class="is-o">O</span><span>S</span>
+          </div>
+          <button class="header-icon-button" id="nos-article-close" type="button" aria-label="Sluiten">×</button>
+        </div>
+        <div class="nos-article-body">
+          <p class="nos-article-date" id="nos-article-date">Vandaag</p>
+          <h1 class="nos-article-title" id="nos-article-title">Titel</h1>
+          <div class="nos-article-image-wrap is-hidden" id="nos-article-image-wrap">
+            <img class="nos-article-image" id="nos-article-image" alt="">
+          </div>
+          <div class="nos-article-copy" id="nos-article-copy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="./planner.js"></script>
+</body>
+</html>

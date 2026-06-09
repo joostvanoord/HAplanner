@@ -1,0 +1,40 @@
+name: "Home Planner"
+description: "Persoonlijk dashboard met agenda, weer, sport en smart home."
+version: "0.1.0"
+slug: "home_planner"
+init: false
+arch:
+  - aarch64
+  - amd64
+ports:
+  4310/tcp: 4310
+ports_description:
+  4310/tcp: "Web UI"
+ingress: true
+ingress_port: 4310
+panel_icon: "mdi:view-dashboard"
+panel_title: "Planner"
+options:
+  SPORTS_API_KEY: "1"
+  FOOTBALL_DATA_API_KEY: ""
+  WEATHER_LATITUDE: "51.4416"
+  WEATHER_LONGITUDE: "5.4697"
+  WEATHER_TIMEZONE: "Europe/Amsterdam"
+  GOOGLE_CLIENT_ID: ""
+  GOOGLE_CLIENT_SECRET: ""
+  GOOGLE_REDIRECT_URI: ""
+  GOOGLE_CALENDAR_ME_ID: ""
+  GOOGLE_CALENDAR_PARTNER_ID: ""
+  GOOGLE_CALENDAR_SHARED_ID: ""
+schema:
+  SPORTS_API_KEY: str
+  FOOTBALL_DATA_API_KEY: str
+  WEATHER_LATITUDE: str
+  WEATHER_LONGITUDE: str
+  WEATHER_TIMEZONE: str
+  GOOGLE_CLIENT_ID: str
+  GOOGLE_CLIENT_SECRET: str
+  GOOGLE_REDIRECT_URI: str
+  GOOGLE_CALENDAR_ME_ID: str
+  GOOGLE_CALENDAR_PARTNER_ID: str
+  GOOGLE_CALENDAR_SHARED_ID: str
