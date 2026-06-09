@@ -1,6 +1,6 @@
 name: "Home Planner"
 description: "Persoonlijk dashboard met agenda, weer, sport en smart home."
-version: "0.1.0"
+version: "0.1.1"
 slug: "home_planner"
 init: false
 arch:
